@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   var container = document.querySelector('.snow-container');
-
   if (!container) return;
 
   function getRandomColor() {
@@ -8,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  for (var i = 0; i < 100; i++) {
+  var flakeCount = window.innerWidth <= 768 ? 30 : 100; // ถ้าหน้าจอกว้าง ≤768px (มือถือ), ใช้ 30
+
+  for (var i = 0; i < flakeCount; i++) {
     var flake = document.createElement('div');
     flake.className = 'snowflake';
 
